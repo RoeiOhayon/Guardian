@@ -19,15 +19,15 @@ def get_by_username(username, users_repository):
 
 ## Supported Guard Clauses
 
-- **none** Raises if None
-- **negative** Raises if Negative
-- **zero** Raises if zero
-- **positive** Raises if positive
-- **not_in_range** Raises if not in range
-- **regex** Raises if not matching
-- **not_numeric** Raises if not numeric
-- **not_alphabetic** Raises if not alphabetic
-- **not_alphanumeric** Raises if not alphanumeric
+- **none**
+- **negative**
+- **zero**
+- **positive**
+- **not_in_range**
+- **regex**
+- **not_numeric**
+- **not_alphabetic**
+- **not_alphanumeric**
 
 ## Create a Custom Guard
 
