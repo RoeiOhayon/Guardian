@@ -15,3 +15,24 @@ from guardian import guard
 def get_user_by_username(username, users_repository):
     guard.is_alphabetic(username)  # If username is not alphabetic an Error will be raised
 ```
+
+## Supported Guard Clauses
+
+- **none**
+- **negative**
+- **zero**
+- **positive**
+- **regex**
+- **not_numeric**
+- **not_alphabetic**
+- **not_alphanumeric**
+
+## Create a Custom Guard
+
+```python
+guard.create("alive", labmda v: v.alive)
+
+@guard.alive
+def shoot(enemy):
+  ...
+```
