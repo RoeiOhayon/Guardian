@@ -1,6 +1,6 @@
-<p align="center">
+<h1 align="center">
   <img alt="Guardian Logo" width="185px" src="images/Guardian Logo.png" />
-</p>
+</h1>
 
 # Guardian
 Guard Clause Package
