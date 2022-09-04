@@ -22,6 +22,7 @@ def get_user_by_username(username, users_repository):
 - **negative**
 - **zero**
 - **positive**
+- **not_in_range**
 - **regex**
 - **not_numeric**
 - **not_alphabetic**
