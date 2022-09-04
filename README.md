@@ -11,29 +11,30 @@ Guard Clause Package
 from guardian import guard
 
 
-@guard.none  # If any argument is None an Error will be raised
-def get_user_by_username(username, users_repository):
-    guard.is_alphabetic(username)  # If username is not alphabetic an Error will be raised
+@guard.none
+def get_by_username(username, users_repository):
+    guard.not_alphabtic(username)
+    ...
 ```
 
 ## Supported Guard Clauses
 
-- **none**
-- **negative**
-- **zero**
-- **positive**
-- **not_in_range**
-- **regex**
-- **not_numeric**
-- **not_alphabetic**
-- **not_alphanumeric**
+- **none** Raises if None
+- **negative** Raises if Negative
+- **zero** Raises if zero
+- **positive** Raises if positive
+- **not_in_range** Raises if not in range
+- **regex** Raises if not matching
+- **not_numeric** Raises if not numeric
+- **not_alphabetic** Raises if not alphabetic
+- **not_alphanumeric** Raises if not alphanumeric
 
 ## Create a Custom Guard
 
 ```python
-guard.create("alive", labmda v: v.alive)
+guard.create("dead", labmda v: not v.alive)
 
-@guard.alive
+@guard.dead
 def shoot(enemy):
   ...
 ```
