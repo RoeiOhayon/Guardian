@@ -1,4 +1,4 @@
-<h1 align="center">
+<h1 align="left">
   <img alt="Guardian Logo" width="185px" src="images/Guardian Logo.png" />
 </h1>
 
