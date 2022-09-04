@@ -2,10 +2,10 @@ from guardian import guard
 
 
 def main():
-    good_user("asdfasdf")
+    guard.not_alphabetic("3")
 
 
-@guard.regex(".*")
+@guard.not_numeric
 def good_user(username):
     return username
 
