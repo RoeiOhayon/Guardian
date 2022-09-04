@@ -31,6 +31,16 @@ def positive(value):
     return _guard_arguments(value, lambda x: x > 0, "Positive")
 
 
+def out_of_range(wanted_range, value=None):
+    if value:
+        return _guard_arguments(value, lambda x: x > wanted_range[1] or x < wanted_range[0], "Not in Range")
+    else:
+        def wrapped(func):
+            return _guard_arguments(func, lambda x: x > wanted_range[1] or x < wanted_range[0], "Not in Range")
+
+        return wrapped
+
+
 def regex(pattern, value=None):
     if value:
         return _guard_arguments(value, lambda x: not re.match(pattern, x), "Unmatched Regex Pattern")
