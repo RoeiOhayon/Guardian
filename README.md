@@ -31,10 +31,22 @@ def get_by_username(username, users_repository):
 
 ## Create a Custom Guard
 
+custom_guard.py:
 ```python
-guard.create("dead", labmda v: not v.alive)
+from guardian import Guard, create_guard
 
-@guard.dead
+dead = create_guard(Guard(name="dead", predicate=lambda v: not v.alive, description="Don't Perform if dead"))
+alive = create_guard(Guard(name="dead", predicate=lambda v: v.alive, description="Don't Perform if alive"))
+```
+main.py:
+```python
+import custom_guards
+
+@custom_guard.dead
 def shoot(enemy):
   ...
+
+@custom_guard.alive
+def revive(player):
+  ... 
 ```
