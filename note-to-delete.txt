@@ -1,1 +1,2 @@
 If wanted, use __new__() inside guard to make the interface be without brackets (guard.none instead guard.none())
+Good Search: python decorator with parentheses
