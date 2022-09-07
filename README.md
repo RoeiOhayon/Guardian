@@ -40,7 +40,7 @@ alive = create_guard(Guard(name="dead", predicate=lambda v: v.alive, description
 ```
 main.py:
 ```python
-import custom_guards
+import custom_guard
 
 @custom_guard.dead
 def shoot(enemy):
