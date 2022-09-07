@@ -11,7 +11,7 @@ Guard Clause Package
 from guardian import guard
 
 
-@guard.none()
+@guard.none
 def get_by_username(username, users_repository):
     guard.not_alphabtic(username)
     ...
@@ -42,11 +42,11 @@ main.py:
 ```python
 import custom_guard
 
-@custom_guard.dead()
+@custom_guard.dead
 def shoot(enemy):
   ...
 
-@custom_guard.alive()
+@custom_guard.alive
 def revive(player):
   ... 
 ```
