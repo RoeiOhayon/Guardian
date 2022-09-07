@@ -11,7 +11,7 @@ Guard Clause Package
 from guardian import guard
 
 
-@guard.none
+@guard.none()
 def get_by_username(username, users_repository):
     guard.not_alphabtic(username)
     ...
@@ -33,20 +33,20 @@ def get_by_username(username, users_repository):
 
 custom_guard.py:
 ```python
-from guardian import Guard, create_guard
+from guardian import Guard
 
-dead = create_guard(Guard(name="dead", predicate=lambda v: not v.alive, description="Don't Perform if dead"))
-alive = create_guard(Guard(name="dead", predicate=lambda v: v.alive, description="Don't Perform if alive"))
+dead = Guard(name="dead", predicate=lambda v: not v.alive, description="Don't Perform if dead")
+alive = Guard(name="dead", predicate=lambda v: v.alive, description="Don't Perform if alive")
 ```
 main.py:
 ```python
 import custom_guard
 
-@custom_guard.dead
+@custom_guard.dead()
 def shoot(enemy):
   ...
 
-@custom_guard.alive
+@custom_guard.alive()
 def revive(player):
   ... 
 ```
