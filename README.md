@@ -31,14 +31,14 @@ def get_by_username(username, users_repository):
 
 ## Create a Custom Guard
 
-custom_guard.py:
+Definition in custom_guard.py:
 ```python
 from guardian import Guard
 
 dead = Guard(name="dead", predicate=lambda v: not v.alive, description="Don't Perform if dead")
 alive = Guard(name="dead", predicate=lambda v: v.alive, description="Don't Perform if alive")
 ```
-main.py:
+Usage in main.py:
 ```python
 import custom_guard
 
