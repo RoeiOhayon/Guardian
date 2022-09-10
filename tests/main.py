@@ -1,13 +1,13 @@
-from guardian import guard
+from guardian import guards as guard
 
 
 def main():
-    guard.not_alphabetic("3")
+    print(f(19))
 
 
-@guard.not_numeric
-def good_user(username):
-    return username
+@guard.none
+def f(n):
+    return n * 2
 
 
 if __name__ == "__main__":

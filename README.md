@@ -49,4 +49,8 @@ def shoot(enemy):
 @custom_guard.alive
 def revive(player):
   ... 
+<<<<<<< Updated upstream
 ```
+=======
+```
+>>>>>>> Stashed changes
