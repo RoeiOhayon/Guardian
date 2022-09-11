@@ -2,10 +2,9 @@ from guardian import guards as guard
 
 
 def main():
-    print(f(19))
+    print(f(5))
 
 
-@guard.none
 def f(n):
     return n * 2
 
