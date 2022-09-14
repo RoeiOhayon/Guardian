@@ -1,3 +1,7 @@
 - If wanted, use __new__() inside guard to make the interface be without brackets (guard.none instead guard.none())
 - Good Search: python decorator with parentheses
-- User wraps (Make API more understandable)
+- Use wraps (Make API more understandable)
+- Maybe Provide onError function? or maybe return from function (Probably a bad idea)
+- less_than, more_than
+- maybe enable no parentheses
+- Make good errors for library
