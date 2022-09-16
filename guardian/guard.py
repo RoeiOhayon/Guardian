@@ -18,7 +18,7 @@ class Guard:
                     def guarded_function(*inner_args, **kwargs):
                         for arg in inner_args:
                             if predicate(arg, *args):
-                                raise ValueError(f"Guardian: {name} {description} Argument is Not Allowed")
+                                raise ValueError(f"Guardian.{name} Guard: {description}")
                         return func(*inner_args, **kwargs)
 
                     return guarded_function

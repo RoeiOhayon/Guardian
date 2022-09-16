@@ -1,10 +1,11 @@
-from guardian import guards as guard
+from guardian import atomic_guards as guard
 
 
 def main():
-    print(f(5))
+    print(f(2))
 
 
+@guard.zero()
 def f(n):
     return n * 2
 
