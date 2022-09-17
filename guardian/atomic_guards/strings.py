@@ -14,3 +14,7 @@ not_alphabetic = Guard("NotAlphabetic", lambda v: not v.isalpha(), "String must 
 
 alphanumeric = Guard("Alphanumeric", lambda v: v.isalnum(), "String must not be alphanumeric")
 not_alphanumeric = Guard("NotAlphanumeric", lambda v: not v.isalnum(), "String must be alphanumeric")
+
+# is_not_whitespace, is not empty, lowercase, uppercase, guard.not_in-not_equals
+
+# list is_not_empty, contains ?,

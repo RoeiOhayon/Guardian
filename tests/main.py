@@ -2,9 +2,10 @@ from guardian import atomic_guards as guard
 
 
 def main():
-    guard.none(3)
+    print(guard.in_range(235, [234]))
 
 
+@guard.in_range([1, 10])
 def f(n):
     return n * 2
 
