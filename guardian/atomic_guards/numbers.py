@@ -10,7 +10,7 @@ def zero(value: Number = _DefaultValue) -> Optional[Callable]:
     """
     Zero Guard
     :param value: Value to check
-    :return: If value is None, a decorator that checks all arguments will be returned
+    :return: If value is not initialized, a decorator that checks all arguments will be returned
     """
     return Guard(value, "Zero", lambda v: v == 0, "Number cannot be 0")
 
@@ -19,7 +19,7 @@ def negative(value: Number = _DefaultValue) -> Optional[Callable]:
     """
     Negative Guard
     :param value: Value to check
-    :return: If value is None, a decorator that checks all arguments will be returned
+    :return: If value is not initialized, a decorator that checks all arguments will be returned
     """
     return Guard(value, "Negative", lambda v: v < 0, "Number cannot be negative")
 
@@ -28,7 +28,7 @@ def not_negative(value: Number = _DefaultValue) -> Optional[Callable]:
     """
     Not Negative Guard
     :param value: Value to check
-    :return: If value is None, a decorator that checks all arguments will be returned
+    :return: If value is not initialized, a decorator that checks all arguments will be returned
     """
     return Guard(value, "NotNegative", lambda v: v >= 0, "Number must be negative")
 
@@ -37,7 +37,7 @@ def positive(value: Number = _DefaultValue) -> Optional[Callable]:
     """
     Positive Guard
     :param value: Value to check
-    :return: If value is None, a decorator that checks all arguments will be returned
+    :return: If value is not initialized, a decorator that checks all arguments will be returned
     """
     return Guard(value, "Positive", lambda v: v > 0, "Number cannot be positive")
 
@@ -46,20 +46,20 @@ def not_positive(value: Number = _DefaultValue) -> Optional[Callable]:
     """
     Not Positive Guard
     :param value: Value to check
-    :return: If value is None, a decorator that checks all arguments will be returned
+    :return: If value is not initialized, a decorator that checks all arguments will be returned
     """
     return Guard(value, "NotPositive", lambda v: v <= 0, "Number must be positive")
 
 
-def in_range(value_or_range: Union[Number, Sequence[Number]] = _DefaultValue, rng: Sequence[Number] = (-inf, inf)) -> \
+def in_range(value_or_range: Union[Number, Sequence[Number]] = _DefaultValue, rng: Sequence[Number] = _DefaultValue) -> \
         Optional[Callable]:
     """
     In Range Guard
     :param value_or_range: Value to check, if it's a range a that checks all arguments will be returned
-    :param rng: Specified range
-    :return: If value is None, a decorator that checks all arguments will be returned
+    :param rng: Specified range (Initialized only if value_or_range is a Number)
+    :return: If value is not initialized, a decorator that checks all arguments will be returned
     """
-    if not isinstance(value_or_range, Number):
+    if rng == _DefaultValue:
         rng = value_or_range
         value_or_range = _DefaultValue
     return Guard(value_or_range, "InRange", lambda v: rng[0] <= v <= rng[1],
@@ -67,15 +67,15 @@ def in_range(value_or_range: Union[Number, Sequence[Number]] = _DefaultValue, rn
 
 
 def out_of_range(value_or_range: Union[Number, Sequence[Number]] = _DefaultValue,
-                 rng: Sequence[Number] = (-inf, inf)) -> \
+                 rng: Sequence[Number] = _DefaultValue) -> \
         Optional[Callable]:
     """
     Out Range Guard
     :param value_or_range: Value to check, if it's a range a that checks all arguments will be returned
-    :param rng: Specified range
-    :return: If value is None, a decorator that checks all arguments will be returned
+    :param rng: Specified range (Initialized only if value_or_range is a Number)
+    :return: If value is not initialized, a decorator that checks all arguments will be returned
     """
-    if not isinstance(value_or_range, Number):
+    if rng == _DefaultValue:
         rng = value_or_range
         value_or_range = _DefaultValue
     return Guard(value_or_range, "OutOfRange", lambda v: v > rng[1] or v < rng[0],
