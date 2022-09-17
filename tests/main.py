@@ -2,10 +2,9 @@ from guardian import atomic_guards as guard
 
 
 def main():
-    print(f(2))
+    guard.none(3)
 
 
-@guard.zero()
 def f(n):
     return n * 2
 

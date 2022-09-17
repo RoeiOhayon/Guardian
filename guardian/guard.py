@@ -11,7 +11,9 @@ class Guard:
     def __new__(cls, name: str, predicate: Callable[..., bool], description: str):
         def guard_decorator(*args):
             if len(args) == get_arg_count(predicate):
-                return predicate(*args)
+                if predicate(*args):
+                    raise ValueError(f"Guardian.{name} Guard: {description}")
+                return
             else:
                 def guarded_func_decorator(func):
                     @wraps(func)
