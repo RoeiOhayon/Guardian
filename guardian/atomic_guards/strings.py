@@ -111,3 +111,12 @@ def uppercase(value: str = _DefaultValue) -> Optional[Callable]:
     :return: If value is is not initialized, a decorator that checks all arguments will be returned
     """
     return Guard(value, "Uppercase", lambda v: v.isupper(), "String must not be uppercase")
+
+
+def empty_or_whitespace(value: str = _DefaultValue) -> Optional[Callable]:
+    """
+    Empty or Whitespace Guard
+    :param value: Value to check
+    :return: If value is is not initialized, a decorator that checks all arguments will be returned
+    """
+    return Guard(value, "EmptyOrWhitespace", lambda v: v.isspace() or v == "", "String must not be empty or whitespace")
