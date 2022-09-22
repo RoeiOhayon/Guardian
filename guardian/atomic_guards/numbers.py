@@ -70,7 +70,7 @@ def out_of_range(value_or_range: Union[Number, Sequence[Number]] = _DefaultValue
                  rng: Sequence[Number] = _DefaultValue) -> \
         Optional[Callable]:
     """
-    Out Range Guard
+    Out of Range Guard
     :param value_or_range: Value to check, if it's a range a that checks all arguments will be returned
     :param rng: Specified range (Initialized only if value_or_range is a Number)
     :return: If value is not initialized, a decorator that checks all arguments will be returned

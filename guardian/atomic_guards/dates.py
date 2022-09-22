@@ -38,9 +38,7 @@ def out_of_date_range(value_or_range: Union[Number, Sequence[Number]] = _Default
                  "Date cannot be outside the specified range")
 
 
-def after(value_or_min_date: Union[float, Sequence[float]] = _DefaultValue,
-          min_date: Sequence[float] = _DefaultValue) -> \
-        Optional[Callable]:
+def after(value_or_min_date: float = _DefaultValue, min_date: float = _DefaultValue) -> Optional[Callable]:
     """
     After Guard
     :param value_or_min_date: Value to check, if it's a range a that checks all arguments will be returned
@@ -53,11 +51,9 @@ def after(value_or_min_date: Union[float, Sequence[float]] = _DefaultValue,
     return Guard(value_or_min_date, "AfterDate", lambda v: v > min_date, "Date must be before specified date")
 
 
-def before(value_or_max_date: Union[float, Sequence[float]] = _DefaultValue,
-           max_date: Sequence[float] = _DefaultValue) -> \
-        Optional[Callable]:
+def before(value_or_max_date: float = _DefaultValue, max_date: float = _DefaultValue) -> Optional[Callable]:
     """
-    After Guard
+    Before Guard
     :param value_or_max_date: Value to check, if it's a range a that checks all arguments will be returned
     :param max_date: Specified date (Initialized only if value_or_min_date is a float)
     :return: If value is not initialized, a decorator that checks all arguments will be returned

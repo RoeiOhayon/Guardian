@@ -1,11 +1,12 @@
-from guardian import atomic_guards as guard
+from guardian import guard
 
 
 def main():
-    print(guard.in_range(235, [234]))
+    print(f(""))
 
 
-@guard.in_range([1, 10])
+@guard.empty()
+@guard.whitespace()
 def f(n):
     return n * 2
 
