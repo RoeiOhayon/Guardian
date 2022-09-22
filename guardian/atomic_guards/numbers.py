@@ -3,7 +3,6 @@ from guardian.guard import Guard
 
 from typing import Optional, Callable, Sequence, Union
 from numbers import Number
-from math import inf
 
 
 def zero(value: Number = _DefaultValue) -> Optional[Callable]:

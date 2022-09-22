@@ -3,7 +3,6 @@ from guardian._default_value import _DefaultValue
 
 from typing import Union, Sequence, Optional, Callable
 from numbers import Number
-from math import inf
 
 
 def in_date_range(value_or_range: Union[Number, Sequence[Number]] = _DefaultValue,
