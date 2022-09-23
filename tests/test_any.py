@@ -2,12 +2,12 @@ from guardian import guard
 import pytest
 
 
-def test_raises_when_none():
+def test_raises_if_none():
     with pytest.raises(ValueError):
         guard.none(None)
 
 
-def test_decorator_raises_when_none():
+def test_decorator_raises_if_one_arg_none():
     @guard.none()
     def function(a, b, c):
         return a or b or c
