@@ -1,2 +1,2 @@
-class _DefaultValue:
-    description: str = "Default value for guards"
+# Default value for guards (Sentinel Design Pattern)
+_DefaultValue = object()
