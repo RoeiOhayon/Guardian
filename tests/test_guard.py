@@ -58,7 +58,7 @@ def test_decorator_not_raises_if_extracted_property_not_matches_regex():
 
 # region Transformer Tests
 
-def test_decorator_raises_if_transformed_qualifies():
+def test_decorator_raises_if_transformed_is_none():
     @guard.none(transformer=lambda v: v.name)
     def function(person):
         return "name: " + person.name
@@ -67,7 +67,7 @@ def test_decorator_raises_if_transformed_qualifies():
         function(Person(None))
 
 
-def test_decorator_not_raises_if_transformed_not_qualifies():
+def test_decorator_not_raises_if_transformed_is_not_none():
     @guard.none(transformer=lambda v: v.name)
     def function(person):
         return "name: " + person.name
@@ -90,5 +90,43 @@ def test_decorator_not_raises_if_transformed_not_matches_regex():
         return "name: " + person.name
 
     function(Person("John"))
+
+
+# endregion
+
+# region Key Tests
+
+def test_decorator_raises_if_value_at_key_is_none():
+    @guard.none(key="name")
+    def function(person):
+        return "name: " + person["name"]
+
+    with pytest.raises(ValueError):
+        function({"name": None})
+
+
+def test_decorator_not_raises_if_value_at_key_is_not_none():
+    @guard.none(key="name")
+    def function(person):
+        return "name: " + person["name"]
+
+    function({"name": "John"})
+
+
+def test_decorator_raises_if_value_at_key_matches_regex():
+    @guard.matches_regex(".*el$", key="name")
+    def function(person):
+        return "name: " + person["name"]
+
+    with pytest.raises(ValueError):
+        function({"name": "Samuel"})
+
+
+def test_decorator_not_raises_if_value_at_key_not_matches_regex():
+    @guard.matches_regex(".*el$", key="name")
+    def function(person):
+        return "name: " + person["name"]
+
+    function({"name": "John"})
 
 # endregion

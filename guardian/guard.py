@@ -16,6 +16,8 @@ def is_validation_call(predicate: Callable[..., bool], arguments) -> bool:
 def transform_argument(argument, kwargs):
     if "property" in kwargs:
         return getattr(argument, kwargs["property"])
+    elif "key" in kwargs:
+        return argument[kwargs["key"]]
     elif "transformer" in kwargs:
         return kwargs["transformer"](argument)
     else:
