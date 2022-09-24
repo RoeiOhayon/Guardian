@@ -5,8 +5,8 @@ setup(
     packages=['guardian', 'guardian.atomic_guards'],
     version='1.0.0',
     description='Guard Clause Library',
-    long_description="This library enables using guard clauses, and provides decorators for guarding functions",
+    long_description="With this package, you can use guard clauses both as function decorators and general guard clauses.",
     author='Roei Ohayon',
-    author_email='',
+    author_email='roeiohayon1652@gmail.com',
     url='https://github.com/RoeiOhayon/Guardian',
 )
