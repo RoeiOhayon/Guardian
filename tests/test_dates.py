@@ -9,7 +9,6 @@ def date_range():
 
 # region InDateRange Guard Tests
 
-
 def test_raises_if_in_date_range(date_range):
     with pytest.raises(ValueError):
         guard.in_date_range(0, date_range)
@@ -38,9 +37,7 @@ def test_decorator_not_raises_if_no_arg_is_in_date_range(date_range):
 
 # endregion
 
-
 # region OutOfDateRange Guard Tests
-
 
 def test_raises_if_out_of_date_range(date_range):
     with pytest.raises(ValueError):
@@ -70,9 +67,7 @@ def test_decorator_not_raises_if_no_arg_is_out_of_date_range(date_range):
 
 # endregion
 
-
 # region After Guard Tests
-
 
 def test_raises_if_after():
     with pytest.raises(ValueError):
@@ -102,9 +97,7 @@ def test_decorator_not_raises_no_arg_is_after():
 
 # endregion
 
-
 # region Before Guard Tests
-
 
 def test_raises_if_before():
     with pytest.raises(ValueError):

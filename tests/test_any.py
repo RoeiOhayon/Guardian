@@ -3,6 +3,7 @@ import pytest
 
 
 # region None Guard Tests
+
 def test_raises_if_none():
     with pytest.raises(ValueError):
         guard.none(None)
@@ -30,7 +31,6 @@ def test_decorator_not_raises_if_no_arg_is_none():
 
 
 # endregion
-
 
 # region Contains Guard Tests
 
@@ -62,9 +62,7 @@ def test_decorator_not_raises_if_no_arg_contains():
 
 # endregion
 
-
 # region Contains Guard Tests
-
 
 def test_raises_if_equals():
     with pytest.raises(ValueError):
