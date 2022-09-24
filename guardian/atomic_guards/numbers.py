@@ -54,7 +54,9 @@ def in_range(value_or_range: Union[Number, Sequence[Number]] = _DefaultValue, rn
         Optional[Callable]:
     """
     In Range Guard
-    :param value_or_range: Value to check if in range, if range is not passed as second argument, the value will be treated as the range to check against
+    :param value_or_range:
+        Value to check if in range, if range is not passed as second argument,
+        the value will be treated as the range to check against
     :param rng: Range to check if value is in
     :return: If second parameter is not provided, a decorator that checks all function's arguments will be returned
     """
@@ -68,7 +70,9 @@ def out_of_range(value_or_range: Union[Number, Sequence[Number]] = _DefaultValue
         Optional[Callable]:
     """
     Out of Range Guard
-    :param value_or_range: Value to check if out of range, if range is not passed as second argument, the value will be treated as the range to check against
+    :param value_or_range:
+        Value to check if out of range, if range is not passed as second argument,
+        the value will be treated as the range to check against
     :param rng: Range to check if value is out of
     :return: If second parameter is not provided, a decorator that checks all function's arguments will be returned
     """

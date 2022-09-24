@@ -7,7 +7,9 @@ import re
 def matches_regex(value_or_pattern: str = _DefaultValue, pattern: str = _DefaultValue) -> Optional[Callable]:
     """
     Matches Regex Guard
-    :param value_or_pattern: Value to check if matches pattern, if pattern is not passed as second argument, the value will be treated as the pattern to check against
+    :param value_or_pattern:
+        Value to check if matches pattern, if pattern is not passed as second argument,
+        the value will be treated as the pattern to check against
     :param pattern: Pattern to check if value is matching to
     :return: If second parameter is not provided, a decorator that checks all function's arguments will be returned
     """
@@ -21,7 +23,9 @@ def matches_regex(value_or_pattern: str = _DefaultValue, pattern: str = _Default
 def not_matches_regex(value_or_pattern: str = _DefaultValue, pattern: str = _DefaultValue) -> Optional[Callable]:
     """
     Not Matches Regex Guard
-    :param value_or_pattern: Value to check if not matches pattern, if pattern is not passed as second argument, the value will be treated as the pattern to check against
+    :param value_or_pattern:
+        Value to check if not matches pattern, if pattern is not passed as second argument,
+        the value will be treated as the pattern to check against
     :param pattern: Pattern to check if value is not matching to
     :return: If second parameter is not provided, a decorator that checks all function's arguments will be returned
     """

@@ -15,7 +15,9 @@ def none(value: any = _DefaultValue) -> Optional[Callable]:
 def contains(value_or_element: any = _DefaultValue, element: any = _DefaultValue) -> Optional[Callable]:
     """
     Contains Guard
-    :param value_or_element: Value to check if contains element, if element is not passed as second argument, the value will be treated as the element to search
+    :param value_or_element:
+        Value to check if contains element, if element is not passed as second argument,
+        the value will be treated as the element to search
     :param element: Element to search
     :return: If second parameter is not provided, a decorator that checks all function's arguments will be returned
     """
@@ -28,7 +30,9 @@ def contains(value_or_element: any = _DefaultValue, element: any = _DefaultValue
 def equals(value_or_element: any = _DefaultValue, element: any = _DefaultValue) -> Optional[Callable]:
     """
     Equals Guard
-    :param value_or_element: Value to check if equals to element, if element is not passed as second argument, the value will be treated as the element to check equality to
+    :param value_or_element:
+        Value to check if equals to element, if element is not passed as second argument,
+        the value will be treated as the element to check equality to
     :param element: Element to check equality to
     :return: If second parameter is not provided, a decorator that checks all function's arguments will be returned
     """
