@@ -56,7 +56,7 @@ def test_decorator_not_raises_if_extracted_property_not_matches_regex():
 
 # endregion
 
-# region ExtractProperty Tests
+# region Transformer Tests
 
 def test_decorator_raises_if_transformed_qualifies():
     @guard.none(transformer=lambda v: v.name)
