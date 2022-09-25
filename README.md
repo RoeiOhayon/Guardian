@@ -61,7 +61,7 @@ def revive(player):
   ... 
 ```
 
-## Additional Arguments
+## Additional Parameters
 - **property:** extracts property from objects
 - **key:** get value at key
 - **transformer:** function to extract wanted data to guard against
@@ -77,6 +77,19 @@ def login(user: dict):
 @guard.none(transformer=lambda v: v.name)
 def login(user: User):
   # if user.name is None an exception will be thrown
+```
+
+## More Code Examples:
+```python
+guard.matches_regex(".*el$")
+def greet_user(username):
+  # username = "Daniel" will throw an exception
+  # username = "John" won't throw an exception
+
+# Alternatively you can use:
+def greet_user(username):
+  guard.matches_regex(username, ".*el$")
+  ...
 ```
 
 Feel free to give a ⭐ if you enjoy using this project 😊
