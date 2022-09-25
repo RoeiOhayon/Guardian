@@ -5,7 +5,7 @@
 [![Python](https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10-2596be)](https://python.org)
 [![PyPI](https://img.shields.io/badge/PyPI-v1.1.0-33CA58)](https://pypi.org/project/guardian-python/)
 [![PyPI](https://img.shields.io/badge/email-roeiohayon1652%40gmail.com-darkviolet)](https://gmail.com)
-[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Get%20over%20170%20free%20design%20blocks%20based%20on%20Bootstrap%204&url=https://froala.com/design-blocks&via=froala&hashtags=bootstrap,design,templates,blocks,developers)
+[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=https://github.com/RoeiOhayon/Guardian)
 
 # Guardian
 A [Guard Clause](https://en.wikipedia.org/wiki/Guard_(computer_science)) is a validation of information used to avoid errors during execution, and enables to ["fail fast"](https://en.wikipedia.org/wiki/Fail-fast).<br/>
