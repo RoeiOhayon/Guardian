@@ -77,4 +77,6 @@ def login(user: dict):
 @guard.none(transformer=lambda v: v.name)
 def login(user: User):
   # if user.name is None an exception will be thrown
+```
 
+Feel free to give a ⭐ if you enjoy using this project 😊
