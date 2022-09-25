@@ -46,7 +46,7 @@ custom_guard.py:
 from guardian import Guard
 
 dead = Guard(name="dead", predicate=lambda v: v.HP + v.armor <= 0, description="Don't Perform if dead")
-alive = Guard(name="alive", predicate=lambda v: v.HP + v.armor <= 0, description="Don't Perform if alive")
+alive = Guard(name="alive", predicate=lambda v: v.HP + v.armor > 0, description="Don't Perform if alive")
 ```
 main.py:
 ```python
