@@ -85,10 +85,15 @@ guard.matches_regex(".*el$")
 def greet_user(username):
   # username = "Daniel" will throw an exception
   # username = "John" won't throw an exception
+  ...
 
 # Alternatively you can use:
 def greet_user(username):
   guard.matches_regex(username, ".*el$")
+  ...
+
+@guard.out_of_range([0, 255])
+def rgb_to_hsv(r, g, b):
   ...
 ```
 
