@@ -6,7 +6,7 @@ import pytest
 
 def test_raises_if_none():
     with pytest.raises(ValueError):
-        guard.none(None)
+        guard.none("None")
 
 
 def test_not_raises_if_not_none():
