@@ -61,9 +61,9 @@ def revive(player):
 ```
 
 ## Additional Arguments
-- property: extracts property from objects
-- key: get value at key
-- transformer: function to extract wanted data to guard against
+- **property:** extracts property from objects
+- **key:** get value at key
+- **transformer:** function to extract wanted data to guard against
 ```python
 @guard.none(property="name")
 def login(user: User):
