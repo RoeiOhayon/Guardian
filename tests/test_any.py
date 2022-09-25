@@ -62,7 +62,7 @@ def test_decorator_not_raises_if_no_arg_contains():
 
 # endregion
 
-# region Contains Guard Tests
+# region Equals Guard Tests
 
 def test_raises_if_equals():
     with pytest.raises(ValueError):
