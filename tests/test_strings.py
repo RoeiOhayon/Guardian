@@ -440,6 +440,38 @@ def test_decorator_not_raises_if_no_arg_is_not_not_email():
 # endregion
 
 
+# region NotIPv4 Guard Tests
+
+
+def test_raises_if_not_ipv4():
+    with pytest.raises(ValueError):
+        guard.not_ipv4("10.20.2.266")
+
+
+def test_not_raises_if_not_not_ipv4():
+    guard.not_ipv4("255.22.10.36")
+
+
+def test_decorator_raises_if_one_arg_is_not_ipv4():
+    @guard.not_ipv4()
+    def function(a, b, c):
+        return a or b or c
+
+    with pytest.raises(ValueError):
+        function("10.20.10.55", "255.210.36.47", "10.0.0.266")
+
+
+def test_decorator_not_raises_if_no_arg_is_not_not_ipv4():
+    @guard.not_ipv4()
+    def function(a, b, c):
+        return a or b or c
+
+    function("10.20.10.55", "255.210.36.47", "11.22.33.44")
+
+
+# endregion
+
+
 # region NotBase64 Guard Tests
 
 

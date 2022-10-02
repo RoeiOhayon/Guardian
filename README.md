@@ -27,7 +27,7 @@ from guardian import guard
 
 
 @guard.none()
-def buy_item(username, users_repository, products_repository):
+def buy_item(username: str, users_repository: UsersRepository, products_repository: ProductsRepository):
     guard.not_alphabtic(username)
     ...
 ```
@@ -53,11 +53,11 @@ main.py:
 import custom_guard
 
 @custom_guard.dead()
-def shoot(enemy):
+def shoot(enemy: Enemy):
   ...
 
 @custom_guard.alive()
-def revive(player):
+def revive(player: Player):
   ... 
 ```
 
@@ -82,18 +82,18 @@ def login(user: User):
 ## More Code Examples:
 ```python
 guard.matches_regex(".*el$")
-def greet_user(username):
+def greet_user(username: str):
   # username = "Daniel" will throw an exception
   # username = "John" won't throw an exception
   ...
 
 # Alternatively you can use:
-def greet_user(username):
+def greet_user(username: str):
   guard.matches_regex(username, ".*el$")
   ...
 
 @guard.out_of_range([0, 255])
-def rgb_to_hsv(r, g, b):
+def rgb_to_hsv(r: int, g: int, b: int) -> tuple:
   ...
 ```
 
