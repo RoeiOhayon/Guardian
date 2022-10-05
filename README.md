@@ -93,7 +93,7 @@ def greet_user(username: str):
   ...
 
 @guard.out_of_range([0, 255])
-def rgb_to_hsv(r: int, g: int, b: int) -> tuple:
+def rgb_to_hsv(r: int, g: int, b: int) -> Tuple[int, int, int]:
   ...
 ```
 
