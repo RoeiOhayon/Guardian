@@ -213,7 +213,7 @@ def test_decorator_not_raises_if_no_arg_is_alphanumeric():
 
 # endregion
 
-# region Alphanumeric Guard Tests
+# region NotAlphanumeric Guard Tests
 
 def test_raises_if_not_alphanumeric():
     with pytest.raises(ValueError):
@@ -373,5 +373,129 @@ def test_decorator_not_raises_if_no_arg_is_empty_or_whitespace():
         return a or b or c
 
     function(" There", "hello ", "123")
+
+
+# endregion
+
+# region NotURL Guard Tests
+
+
+def test_raises_if_not_url():
+    with pytest.raises(ValueError):
+        guard.not_url("https:/hello.com")
+
+
+def test_not_raises_if_not_not_url():
+    guard.not_url("http://localhost:/files")
+
+
+def test_decorator_raises_if_one_arg_is_not_url():
+    @guard.not_url()
+    def function(a, b, c):
+        return a or b or c
+
+    with pytest.raises(ValueError):
+        function("http://www.hello.com", "https://hi.com", "hello there.com")
+
+
+def test_decorator_not_raises_if_no_arg_is_not_not_url():
+    @guard.not_url()
+    def function(a, b, c):
+        return a or b or c
+
+    function("http://www.hello.com", "https://hi.com", "https://hello.there.www")
+
+
+# endregion
+
+# region NotEmail Guard Tests
+
+
+def test_raises_if_not_email():
+    with pytest.raises(ValueError):
+        guard.not_email(" guardian-python@gmail.com")
+
+
+def test_not_raises_if_not_not_email():
+    guard.not_email("guardianpython@gmail.com")
+
+
+def test_decorator_raises_if_one_arg_is_not_email():
+    @guard.not_email()
+    def function(a, b, c):
+        return a or b or c
+
+    with pytest.raises(ValueError):
+        function("guardianpython@gmail.com", "hi@outlook.com", "hello there.com")
+
+
+def test_decorator_not_raises_if_no_arg_is_not_not_email():
+    @guard.not_email()
+    def function(a, b, c):
+        return a or b or c
+
+    function("guardianpython@gmail.com", "a@g.com", "python@isgreat.ongmail.com")
+
+
+# endregion
+
+# region NotIPv4 Guard Tests
+
+
+def test_raises_if_not_ipv4():
+    with pytest.raises(ValueError):
+        guard.not_ipv4("10.20.2.266")
+
+
+def test_not_raises_if_not_not_ipv4():
+    guard.not_ipv4("255.22.10.36")
+
+
+def test_decorator_raises_if_one_arg_is_not_ipv4():
+    @guard.not_ipv4()
+    def function(a, b, c):
+        return a or b or c
+
+    with pytest.raises(ValueError):
+        function("10.20.10.55", "255.210.36.47", "10.0.0.266")
+
+
+def test_decorator_not_raises_if_no_arg_is_not_not_ipv4():
+    @guard.not_ipv4()
+    def function(a, b, c):
+        return a or b or c
+
+    function("10.20.10.55", "255.210.36.47", "11.22.33.44")
+
+
+# endregion
+
+# region NotBase64 Guard Tests
+
+
+def test_raises_if_not_base64():
+    with pytest.raises(ValueError):
+        guard.not_base64("1234*")
+
+
+def test_not_raises_if_not_not_base64():
+    guard.not_base64("aGVsbG8gdGhlcmUgYnJvdGhlcnMgYW5kIHNpc3RlcnM=")
+
+
+def test_decorator_raises_if_one_arg_is_not_base64():
+    @guard.not_base64()
+    def function(a, b, c):
+        return a or b or c
+
+    with pytest.raises(ValueError):
+        function("aGVsbG8gdGhlcmUgYnJvdGhlcnMgYW5kIHNpc3RlcnM=", "dmVyeSBjb29sIHJlZ2V4", "I'm not base64!")
+
+
+def test_decorator_not_raises_if_no_arg_is_not_not_base64():
+    @guard.not_base64()
+    def function(a, b, c):
+        return a or b or c
+
+    function("dmVyeSBjb29sIHJlZ2V4", "aGVsbG8gdGhlcmUgYnJvdGhlcnMgYW5kIHNpc3RlcnM=", "aGFoYSEhISE=")
 
 # endregion

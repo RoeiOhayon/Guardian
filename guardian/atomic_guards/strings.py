@@ -126,3 +126,48 @@ def empty_or_whitespace(value: str = _DefaultValue, **kwargs) -> Optional[Callab
     """
     return Guard(value, "EmptyOrWhitespace", lambda v: v.isspace() or v == "", "String must not be empty or whitespace",
                  **kwargs)
+
+
+def not_url(value: str = _DefaultValue, **kwargs) -> Optional[Callable]:
+    """
+    Not URL Guard
+    :param value: Value to check if not URL
+    :return: If value is not provided, a decorator that checks all function's arguments will be returned
+    """
+    pattern = r"^(https?|ftp|file)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]"
+
+    return Guard(value, "NotURL", lambda v: not re.match(pattern, v), "String must be a valid URL", **kwargs)
+
+
+def not_email(value: str = _DefaultValue, **kwargs) -> Optional[Callable]:
+    """
+    Not Email Guard
+    :param value: Value to check if not URL
+    :return: If value is not provided, a decorator that checks all function's arguments will be returned
+    """
+    pattern = r"""(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])"""
+
+    return Guard(value, "NotEmail", lambda v: not re.match(pattern, v), "String must be a valid email address",
+                 **kwargs)
+
+
+def not_ipv4(value: str = _DefaultValue, **kwargs) -> Optional[Callable]:
+    """
+    Not IPv4 Guard
+    :param value: Value to check if not IPv4 address
+    :return: If value is not provided, a decorator that checks all function's arguments will be returned
+    """
+    pattern = r"""^(?:(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])$"""
+
+    return Guard(value, "NotIPv4", lambda v: not re.match(pattern, v), "String must be a valid IPv4 address", **kwargs)
+
+
+def not_base64(value: str = _DefaultValue, **kwargs) -> Optional[Callable]:
+    """
+    Not Base64 Guard
+    :param value: Value to check if not Base64 encoded
+    :return: If value is not provided, a decorator that checks all function's arguments will be returned
+    """
+    pattern = r"""^([A-Za-z0-9+/]{4})*([A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{2}==)?$"""
+
+    return Guard(value, "NotBase64", lambda v: not re.match(pattern, v), "String must be in Base64 encoding", **kwargs)
