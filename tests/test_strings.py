@@ -439,7 +439,6 @@ def test_decorator_not_raises_if_no_arg_is_not_not_email():
 
 # endregion
 
-
 # region NotIPv4 Guard Tests
 
 
@@ -470,7 +469,6 @@ def test_decorator_not_raises_if_no_arg_is_not_not_ipv4():
 
 
 # endregion
-
 
 # region NotBase64 Guard Tests
 
