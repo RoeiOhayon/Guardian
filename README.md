@@ -28,7 +28,7 @@ from guardian import guard
 
 @guard.none()
 def buy_item(username: str, users_repository: UsersRepository, products_repository: ProductsRepository):
-    guard.not_alphabtic(username)
+    guard.not_alphabetic(username)
     ...
 ```
 
