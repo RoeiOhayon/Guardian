@@ -2,7 +2,7 @@
   <img alt="Guardian Logo" width="185px" src="images/Guardian Logo.png" />
 </h1>
 
-[![Python](https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10-2596be)](https://python.org)
+[![Python](https://img.shields.io/badge/python-3.8+-2596be)](https://python.org)
 [![PyPI](https://img.shields.io/badge/PyPI-v1.1.0-33CA58)](https://pypi.org/project/guardian-python/)
 [![PyPI](https://img.shields.io/badge/email-roeiohayon1652%40gmail.com-darkviolet)](https://gmail.com)
 [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=https://github.com/RoeiOhayon/Guardian)
