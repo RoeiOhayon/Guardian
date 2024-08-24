@@ -3,7 +3,7 @@ from distutils.core import setup
 setup(
     name='guardian-python',
     packages=['guardian', 'guardian.atomic_guards'],
-    version='1.1.1',
+    version='1.1.2',
     description='Guard Clause Package',
     long_description="Guardian allows you to use guard clauses both as function decorators and regular guard clauses\n"
                      "Guard Clause Decorators allow you to check all of a function's arguments.\n"
